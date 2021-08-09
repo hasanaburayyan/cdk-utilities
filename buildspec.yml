@@ -9,6 +9,8 @@ phases:
     commands:
       - echo Building and Publishing Project
       - yarn build
+      - echo PUBLISHING
+      - yarn publish:pypi
   post_build:
     commands:
       - echo I think I would Bump Here!
