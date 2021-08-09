@@ -2,7 +2,7 @@
   "name": "cdk-utilities",
   "repository": {
     "type": "git",
-    "url": "https://github.com/user/cdk-utilities.git"
+    "url": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/cdk-utilities"
   },
   "scripts": {
     "clobber": "npx projen clobber",
@@ -22,17 +22,18 @@
     "eslint": "npx projen eslint",
     "compat": "npx projen compat",
     "publish:npm": "npx projen publish:npm",
+    "publish:pypi": "npx projen publish:pypi",
     "docgen": "npx projen docgen",
     "release": "npx projen release",
     "projen": "npx projen"
   },
   "author": {
-    "name": "user",
-    "email": "user@domain.com",
+    "name": "Hasan Abu-Rayyan",
+    "email": "hasanaburayyan21@gmail.com",
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.95.2",
+    "@aws-cdk/assert": "^1.117.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -55,7 +56,15 @@
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-s3": "^1.117.0",
+    "@aws-cdk/cloud-assembly-schema": "^1.117.0",
+    "@aws-cdk/core": "^1.117.0",
     "constructs": "^3.2.27"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-s3": "^1.117.0",
+    "@aws-cdk/cloud-assembly-schema": "^1.117.0",
+    "@aws-cdk/core": "^1.117.0"
   },
   "bundledDependencies": [],
   "keywords": [
@@ -107,7 +116,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "cdk_tree_parser",
+        "module": "cdk_tree_parser"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
