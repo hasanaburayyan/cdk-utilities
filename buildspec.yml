@@ -27,7 +27,8 @@ phases:
       - git config user.email "hasanaburayyan21@gmail.com"
       - new_release=$(cat dist/version.txt | xargs -I % echo v%)
       - git tag $new_release main
-      - git push origin $new_release
+      - git remote add repo $PROJECT_URL
+      - git push repo $new_release
   post_build:
     commands:
       - echo PUBLISH TO PYPI
