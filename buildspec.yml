@@ -5,11 +5,11 @@ batch:
   build-graph:
     - identifier: release
       buildspec: release.yml
-    - identifier: release-pypi
+    - identifier: releasePypi
       buildspec: release-pypi.yml
       depend-on:
         - release
-    - identifier: release-npm
+    - identifier: releaseNpm
         buildspec: release-npm.yml
         depend-on:
           - release
