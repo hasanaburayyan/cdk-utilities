@@ -39,6 +39,12 @@ new ConstructTreeParser(node: App)
 public generateParseTree()
 ```
 
+##### `generateTreeStructure` <a name="cdk-utilities.ConstructTreeParser.generateTreeStructure"></a>
+
+```typescript
+public generateTreeStructure()
+```
+
 
 #### Properties <a name="Properties"></a>
 
