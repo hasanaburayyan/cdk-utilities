@@ -13,6 +13,10 @@ export class ConstructTreeParser {
     return new ParseTree(this._rootNode);
   }
 
+  public generateTreeStructure(): string {
+    return new ParseTree(this._rootNode).genTreeStructure();
+  }
+
   public get rootNode(): cdk.App {
     return this._rootNode;
   }

@@ -51,11 +51,10 @@ test('Create Tree Structure', () => {
   const treeParser = new ConstructTreeParser(app);
 
   // WHEN
-  const parseTree = treeParser.generateParseTree();
-  const treeStructure = parseTree.genTreeStructure();
+  const parseTree = treeParser.generateTreeStructure();
 
   // THEN
-  expect(treeStructure).toBe(
+  expect(parseTree).toBe(
     `Tree
 some-stack
 \`-- some-bucket-id
