@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo Installing dependencies
+      - echo env
       - yarn install
   build:
     commands:
