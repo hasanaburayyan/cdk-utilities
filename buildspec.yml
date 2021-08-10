@@ -1,17 +1,17 @@
 version: 0.2
 
-batch:
-  fast-fail: true
-  build-graph:
-    - identifier: release
-    - identifier: releasePypi
-      buildspec: release-pypi.yml
-      depend-on:
-        - release
-    - identifier: releaseNpm
-      buildspec: release-npm.yml
-      depend-on:
-        - release
+#batch:
+#  fast-fail: true
+#  build-graph:
+#    - identifier: release
+#    - identifier: releasePypi
+#      buildspec: release-pypi.yml
+#      depend-on:
+#        - release
+#    - identifier: releaseNpm
+#      buildspec: release-npm.yml
+#      depend-on:
+#        - release
 
 phases:
   install:
@@ -23,6 +23,14 @@ phases:
     commands:
       - echo Releasing
       - yarn release
+      - git config user.name "Automation"
+      - git config user.email "hasanaburayyan21@gmail.com"
+      - new_release=$(cat dist/version.txt | xargs -I % echo v%)
+      - git tag $new_release main
+      - git push origin $new_release
   post_build:
     commands:
-      - echo I think I would Bump Here!
+      - echo PUBLISH TO PYPI
+      - yarn publish:pypi
+      - echo PUBLISH TO NPM
+      - yarn publish:npm
