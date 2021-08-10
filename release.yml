@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies
+      - env
+      - yarn install
+  build:
+    commands:
+      - echo Releasing
+      - yarn release
+  post_build:
+    commands:
+      - echo I think I would Bump Here!
+

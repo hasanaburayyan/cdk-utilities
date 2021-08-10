@@ -1,16 +1,17 @@
 version: 0.2
 
-phases:
-  install:
-    commands:
-      - echo Installing dependencies
-      - env
-      - yarn install
-  build:
-    commands:
-      - echo Releasing
-      - yarn release
-  post_build:
-    commands:
-      - echo I think I would Bump Here!
+batch:
+  fast-fail: true
+  build-graph:
+    - identifier: release
+      buildspec: release.yml
+    - identifier: release-pypi
+      buildspec: release-pypi.yml
+      depend-on:
+        - release
+    - identifier: release-npm
+        buildspec: release-npm.yml
+        depend-on:
+          - release
+
 
