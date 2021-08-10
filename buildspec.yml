@@ -10,8 +10,8 @@ batch:
       depend-on:
         - release
     - identifier: releaseNpm
-        buildspec: release-npm.yml
-        depend-on:
-          - release
+      buildspec: release-npm.yml
+      depend-on:
+        - release
 
 
