@@ -35,4 +35,4 @@ phases:
       - echo PUBLISH TO PYPI
       - yarn publish:pypi
       - echo PUBLISH TO NPM
-      - yarn publish:npm
+      - npm publish:npm
