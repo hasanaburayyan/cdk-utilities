@@ -6,8 +6,8 @@ import { ConstructTreeParser } from '../src/tree-parser';
 /**
  * Test Resources
  */
-class testStack extends Stack { 
-   constructor(scope: Construct, id: string, props?: StackProps) {
+class testStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     new s3.Bucket(this, 'some-bucket-id', {
