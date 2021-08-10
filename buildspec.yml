@@ -4,7 +4,6 @@ batch:
   fast-fail: true
   build-graph:
     - identifier: release
-      buildspec: release.yml
     - identifier: releasePypi
       buildspec: release-pypi.yml
       depend-on:
@@ -14,4 +13,16 @@ batch:
       depend-on:
         - release
 
-
+phases:
+  install:
+    commands:
+      - echo Installing dependencies
+      - env
+      - yarn install
+  build:
+    commands:
+      - echo Releasing
+      - yarn release
+  post_build:
+    commands:
+      - echo I think I would Bump Here!
