@@ -19,6 +19,7 @@ phases:
       - echo Installing dependencies
       - env
       - yarn install
+      - pip install git-remote-codecommit
   build:
     commands:
       - echo Releasing
