@@ -17,7 +17,9 @@ const kvMap: KvMap = { ... }
 
 ### ConstructTreeParser <a name="cdk-utilities.ConstructTreeParser"></a>
 
-#### Initializer <a name="cdk-utilities.ConstructTreeParser.Initializer"></a>
+Construct Tree Parser which when given an cdk app, it will generate different tree structures and meta data.
+
+#### Initializers <a name="cdk-utilities.ConstructTreeParser.Initializer"></a>
 
 ```typescript
 import { ConstructTreeParser } from 'cdk-utilities'
@@ -50,14 +52,20 @@ public generateTreeStructure()
 
 ##### `rootNode`<sup>Required</sup> <a name="cdk-utilities.ConstructTreeParser.property.rootNode"></a>
 
+```typescript
+public readonly rootNode: App;
+```
+
 - *Type:* [`@aws-cdk/core.App`](#@aws-cdk/core.App)
+
+Return back the root node of the Parse Tree which is a cdk app.
 
 ---
 
 
 ### Node <a name="cdk-utilities.Node"></a>
 
-#### Initializer <a name="cdk-utilities.Node.Initializer"></a>
+#### Initializers <a name="cdk-utilities.Node.Initializer"></a>
 
 ```typescript
 import { Node } from 'cdk-utilities'
@@ -114,11 +122,19 @@ public addChild(node: Node)
 
 ##### `nodeId`<sup>Required</sup> <a name="cdk-utilities.Node.property.nodeId"></a>
 
+```typescript
+public readonly nodeId: string;
+```
+
 - *Type:* `string`
 
 ---
 
 ##### `nodePath`<sup>Required</sup> <a name="cdk-utilities.Node.property.nodePath"></a>
+
+```typescript
+public readonly nodePath: string;
+```
 
 - *Type:* `string`
 
@@ -126,17 +142,29 @@ public addChild(node: Node)
 
 ##### `originalNode`<sup>Required</sup> <a name="cdk-utilities.Node.property.originalNode"></a>
 
+```typescript
+public readonly originalNode: ConstructNode;
+```
+
 - *Type:* [`@aws-cdk/core.ConstructNode`](#@aws-cdk/core.ConstructNode)
 
 ---
 
 ##### `childrenNodes`<sup>Required</sup> <a name="cdk-utilities.Node.property.childrenNodes"></a>
 
+```typescript
+public readonly childrenNodes: Node[];
+```
+
 - *Type:* [`cdk-utilities.Node`](#cdk-utilities.Node)[]
 
 ---
 
 ##### `parentNode`<sup>Required</sup> <a name="cdk-utilities.Node.property.parentNode"></a>
+
+```typescript
+public readonly parentNode: Node;
+```
 
 - *Type:* [`cdk-utilities.Node`](#cdk-utilities.Node)
 
@@ -145,7 +173,7 @@ public addChild(node: Node)
 
 ### ParseTree <a name="cdk-utilities.ParseTree"></a>
 
-#### Initializer <a name="cdk-utilities.ParseTree.Initializer"></a>
+#### Initializers <a name="cdk-utilities.ParseTree.Initializer"></a>
 
 ```typescript
 import { ParseTree } from 'cdk-utilities'
@@ -198,7 +226,7 @@ public genTreeStructure()
 
 - *Implements:* [`cdk-utilities.IVisitor`](#cdk-utilities.IVisitor)
 
-#### Initializer <a name="cdk-utilities.PrintTreeStructureVisitor.Initializer"></a>
+#### Initializers <a name="cdk-utilities.PrintTreeStructureVisitor.Initializer"></a>
 
 ```typescript
 import { PrintTreeStructureVisitor } from 'cdk-utilities'
@@ -255,11 +283,19 @@ public visit(node: Node)
 
 ##### `indent`<sup>Required</sup> <a name="cdk-utilities.PrintTreeStructureVisitor.property.indent"></a>
 
+```typescript
+public readonly indent: string;
+```
+
 - *Type:* `string`
 
 ---
 
 ##### `indentLevel`<sup>Required</sup> <a name="cdk-utilities.PrintTreeStructureVisitor.property.indentLevel"></a>
+
+```typescript
+public readonly indentLevel: number;
+```
 
 - *Type:* `number`
 
@@ -267,17 +303,29 @@ public visit(node: Node)
 
 ##### `knownChildrenSeen`<sup>Required</sup> <a name="cdk-utilities.PrintTreeStructureVisitor.property.knownChildrenSeen"></a>
 
+```typescript
+public readonly knownChildrenSeen: KvMap;
+```
+
 - *Type:* [`cdk-utilities.KvMap`](#cdk-utilities.KvMap)
 
 ---
 
 ##### `lastIndentLevel`<sup>Required</sup> <a name="cdk-utilities.PrintTreeStructureVisitor.property.lastIndentLevel"></a>
 
+```typescript
+public readonly lastIndentLevel: number;
+```
+
 - *Type:* `number`
 
 ---
 
 ##### `output`<sup>Required</sup> <a name="cdk-utilities.PrintTreeStructureVisitor.property.output"></a>
+
+```typescript
+public readonly output: string;
+```
 
 - *Type:* `string`
 
@@ -288,7 +336,7 @@ public visit(node: Node)
 
 - *Implements:* [`cdk-utilities.IVisitor`](#cdk-utilities.IVisitor)
 
-#### Initializer <a name="cdk-utilities.PrintVisitor.Initializer"></a>
+#### Initializers <a name="cdk-utilities.PrintVisitor.Initializer"></a>
 
 ```typescript
 import { PrintVisitor } from 'cdk-utilities'
@@ -339,6 +387,10 @@ public visit(node: Node)
 
 ##### `paths`<sup>Required</sup> <a name="cdk-utilities.PrintVisitor.property.paths"></a>
 
+```typescript
+public readonly paths: string;
+```
+
 - *Type:* `string`
 
 ---
@@ -349,6 +401,8 @@ public visit(node: Node)
 ### IVisitor <a name="cdk-utilities.IVisitor"></a>
 
 - *Implemented By:* [`cdk-utilities.PrintTreeStructureVisitor`](#cdk-utilities.PrintTreeStructureVisitor), [`cdk-utilities.PrintVisitor`](#cdk-utilities.PrintVisitor), [`cdk-utilities.IVisitor`](#cdk-utilities.IVisitor)
+
+Visitor interface.
 
 #### Methods <a name="Methods"></a>
 
